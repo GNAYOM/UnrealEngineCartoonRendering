@@ -18,8 +18,8 @@ public:
 
 	virtual void AddMeshBatch(const FMeshBatch& MeshBatch
 		, uint64 BatchElementMask
-		, const FPrimitiveSceneProxy* PrimitiveSceneProxy
-		, int32 StaticMeshId) override final;
+		, const FPrimitiveSceneProxy* RESTRICT PrimitiveSceneProxy
+		, int32 StaticMeshId = -1) override final;
 private:
 	bool Process(
 		const FMeshBatch& MeshBatch
@@ -66,7 +66,7 @@ public:
 			,const FMeshMaterialShaderElementData& ShaderElementData
 			,FMeshDrawSingleShaderBindings& ShaderBindings) const
 	{
-		FMeshMaterialShader::GetShaderBindings(Scene,FeatureLevel,PrimitiveSceneProxy
+		FMeshMaterialShader::GetShaderBindings(Scene,FeatureLevel,PrimitiveSceneProxy,MaterialRenderProxy
 				,Material,DrawRenderState,ShaderElementData,ShaderBindings);
 	}
 };
@@ -101,9 +101,9 @@ public:
 		,const FMaterial& Material
 		,const FMeshPassProcessorRenderState& DrawRenderState
 		,const FMeshMaterialShaderElementData& ShaderElementData
-		,FMeshDrawSingleShaderBindings& ShaderBindings) const
+		,FMeshDrawSingleShaderBindings& ShaderBindings) const//参数绑定着色器变量
 	{
-		FMeshMaterialShader::GetShaderBindings(Scene,FeatureLevel,PrimitiveSceneProxy
+		FMeshMaterialShader::GetShaderBindings(Scene,FeatureLevel,PrimitiveSceneProxy,MaterialRenderProxy
 				,Material,DrawRenderState,ShaderElementData,ShaderBindings);
 
 		FVector3f Color(1.0,0.0,0.0);
