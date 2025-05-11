@@ -1,6 +1,6 @@
 //Toon Shader 修改
 #include "../Common.ush"
-#include "/Engine/Generated/materials.ush"
+#include "/Engine/Generated/Material.ush"
 #include "/Engine/Generated/VertexFactory.ush"
 
 struct FSimpleMeshPassVSToPS
@@ -16,13 +16,13 @@ void MainVS(
 	out FSimpleMeshPassVSToPS Output)
 {
 	float4 ClipSpacePosition;
-	ResolvedView = ResolvedView();
+	ResolvedView = ResolveView();
 
 	FVertexFactoryIntermediates VFIntermediates
 	= GetVertexFactoryIntermediates(Input);//输入数据存入其中，便于处理
 
 	float4 WorldPos = VertexFactoryGetWorldPosition(Input,VFIntermediates);
-	float4 WorldNormal = VertexFactoryGetWorldNormal(Input,VFIntermediates);
+	float3 WorldNormal = VertexFactoryGetWorldNormal(Input,VFIntermediates);
 
 	float3x3 TangentToLocal = VertexFactoryGetTangentToLocal(Input,VFIntermediates);
 	FMaterialVertexParameters VertexParameters

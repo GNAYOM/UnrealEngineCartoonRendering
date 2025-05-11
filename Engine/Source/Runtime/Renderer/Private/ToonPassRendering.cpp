@@ -2,16 +2,15 @@
 #include "ToonPassRendering.h"
 
 #include "ScenePrivate.h"
-#include "MeshPassProcessor.h"
+#include "MeshPassProcessor.inl"
 #include "SimpleMeshDrawCommandPass.h"
 #include "StaticMeshBatch.h"
 #include "DeferredShadingRenderer.h"
-#include "Materials/MaterialRenderProxy.h"
 
 IMPLEMENT_MATERIAL_SHADER_TYPE(, FToonPassVS
-	, TEXT("/Engine/Shaders/Private/Toon/ToonPassShader.usf"), TEXT("MainVS"), SF_Vertex);
+	, TEXT("/Engine/Private/Toon/ToonPassShader.usf"), TEXT("MainVS"), SF_Vertex);
 IMPLEMENT_MATERIAL_SHADER_TYPE(,FToonPassPS
-	,TEXT("/Engine/Shaders/Private/Toon/ToonPassShader.usf"),TEXT("MainPS"),SF_Pixel);
+	,TEXT("/Engine/Private/Toon/ToonPassShader.usf"),TEXT("MainPS"),SF_Pixel);
 //FToonVS FToonPS 绑定至 shader
 FToonPassMeshProcessor::FToonPassMeshProcessor(const FScene* Scene
 	, ERHIFeatureLevel::Type InFeatureLevel
@@ -44,7 +43,7 @@ void FToonPassMeshProcessor::AddMeshBatch(const FMeshBatch& MeshBatch
 	if (Material != nullptr && Material->GetRenderingThreadShaderMap())
 	{
 		const FMaterialShadingModelField ShadingModels = Material->GetShadingModels();
-		if(ShadingModels.HasShadingModel(MSM_Toon) || ShadingModels.HasShadingModel(MSM_ToonFace))//为 shading models 开始渲染
+		if(/*ShadingModels.HasShadingModel( MSM_Toon) || ShadingModels.HasShadingModel(MSM_ToonFace)*/true)//为 shading models 开始渲染
 		{
 			const EBlendMode BlendMode = Material->GetBlendMode();
 
