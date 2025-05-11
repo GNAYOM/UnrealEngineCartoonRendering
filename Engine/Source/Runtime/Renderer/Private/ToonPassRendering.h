@@ -16,7 +16,7 @@ public:
 			,const FMeshPassProcessorRenderState& InPassDrawRenderState
 			,FMeshPassDrawListContext* InDrawListContext);
 
-	virtual void AddMeshBatch(const FMeshBatch& MeshBatch
+	virtual void AddMeshBatch(const FMeshBatch& RESTRICT MeshBatch
 		, uint64 BatchElementMask
 		, const FPrimitiveSceneProxy* RESTRICT PrimitiveSceneProxy
 		, int32 StaticMeshId = -1) override final;
@@ -49,7 +49,7 @@ public:
 		,FShaderCompilerEnvironment& OutEnvironment)
 	{}
 
-	static bool ShouldCompilePermutation(const FMaterialShaderPermutationParameters& Parameters)
+	static bool ShouldCompilePermutation(const FMeshMaterialShaderPermutationParameters& Parameters)
 	{
 		return IsFeatureLevelSupported(Parameters.Platform,ERHIFeatureLevel::SM5) &&
 			(Parameters.VertexFactoryType->GetFName() == FName(TEXT("FLocalVertexFactory")) ||
@@ -86,7 +86,7 @@ public:
 		,FShaderCompilerEnvironment& OutEnvironment)
 	{}
 
-	static bool ShouldCompilePermutation(const FMaterialShaderPermutationParameters& Parameters)
+	static bool ShouldCompilePermutation(const FMeshMaterialShaderPermutationParameters& Parameters)
 	{
 		return IsFeatureLevelSupported(Parameters.Platform,ERHIFeatureLevel::SM5) &&
 			(Parameters.VertexFactoryType->GetFName() == FName(TEXT("FLocalVertexFactory"))||

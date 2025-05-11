@@ -68,7 +68,7 @@ bool FToonPassMeshProcessor::Process(const FMeshBatch& MeshBatch
 	, int32 StaticMeshID
 	, const FPrimitiveSceneProxy* PrimitiveSceneProxy
 	, const FMaterialRenderProxy& MaterialRenderProxy
-	, const FMaterial& MaterialResource
+	, const FMaterial& RESTRICT MaterialResource
 	, ERasterizerFillMode MeshFillMode
 	, ERasterizerCullMode MeshCullMode)
 {

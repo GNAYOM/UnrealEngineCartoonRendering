@@ -29,7 +29,7 @@ void MainVS(
 	= GetMaterialVertexParameters(Input,VFIntermediates,WorldPos.xyz,TangentToLocal);
 	WorldPos.xyz += GetMaterialWorldPositionOffset(VertexParameters);
 
-	float4 RasterizedWorldPosition = VertexFactoryGetRasterizedWorldPosition(Input,VFIntermediates,TangentToLocal);
+	float4 RasterizedWorldPosition = VertexFactoryGetRasterizedWorldPosition(Input,VFIntermediates,WorldPos);
 	ClipSpacePosition = mul(RasterizedWorldPosition,ResolvedView.TranslatedWorldToClip);
 	Output.SvPosition = INVARIANT(ClipSpacePosition);
 	Output.FactoryInterpolants = VertexFactoryGetInterpolantsVSToPS(Input,VFIntermediates,VertexParameters);
