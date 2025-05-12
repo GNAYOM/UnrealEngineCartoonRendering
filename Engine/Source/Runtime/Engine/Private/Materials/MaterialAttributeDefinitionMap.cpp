@@ -399,7 +399,7 @@ FText FMaterialAttributeDefinitionMap::GetAttributeOverrideForMaterial(const FGu
 			return LOCTEXT("Extinction", "Extinction");
 		}
 		CustomPinNames.Add({ MSM_Cloth, "Fuzz Color" });
-		//将 Toon 与 ToonFace 的 SubSurfaceColor 设置为 ToonSubsurfaceColor
+		//将 Toon 与 ToonFace 的 SubSurfaceColor 设置为 ToonSubsurfaceColor 修改
 		CustomPinNames.Add({MSM_Toon,"ToonSubsurfaceColor"});
 		CustomPinNames.Add({MSM_ToonFace,"ToonSubsurfaceColor"});
 		return FText::FromString(GetPinNameFromShadingModelField(Material->GetShadingModels(), CustomPinNames, "Subsurface Color"));

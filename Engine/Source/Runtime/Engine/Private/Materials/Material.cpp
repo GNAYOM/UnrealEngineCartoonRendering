@@ -6940,7 +6940,7 @@ static bool IsPropertyActive_Internal(EMaterialProperty InProperty,
 		case MP_Tangent:
 			Active = ShadingModels.HasAnyShadingModel({ MSM_DefaultLit, MSM_ClearCoat }) && (!bIsTranslucentBlendMode || !bIsVolumetricTranslucencyLightingMode);
 			break;
-			//为 Toon ToonFace Shading model 开启引脚
+			//为 Toon ToonFace Shading model 开启引脚 修改
 		case MP_SubsurfaceColor:
 			Active = ShadingModels.HasAnyShadingModel({ MSM_Toon,MSM_ToonFace,MSM_Subsurface, MSM_PreintegratedSkin, MSM_TwoSidedFoliage, MSM_Cloth });
 			break;

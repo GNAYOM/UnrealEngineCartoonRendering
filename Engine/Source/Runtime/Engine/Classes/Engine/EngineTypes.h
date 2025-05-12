@@ -634,7 +634,7 @@ enum EMaterialShadingModel : int
 	MSM_SingleLayerWater		UMETA(DisplayName="SingleLayerWater"),
 	MSM_ThinTranslucent			UMETA(DisplayName="Thin Translucent"),
 	MSM_Strata					UMETA(DisplayName="Substrate", Hidden),
-	//添加 Shading model 枚举
+	//添加 Shading model 枚举 修改
 	MSM_Toon					UMETA(DisplayName="Toon"),
 	MSM_ToonFace				UMETA(DisplayName="ToonFace"),
 	/** Number of unique shading models. */

@@ -129,7 +129,7 @@ extern FName GetMaterialQualityLevelFName(EMaterialQualityLevel::Type InMaterial
 
 inline bool IsSubsurfaceShadingModel(FMaterialShadingModelField ShadingModel)
 {
-	//判断那些材质为 subsurface 材质
+	//判断那些材质为 subsurface 材质 修改
 	return ShadingModel.HasShadingModel(MSM_Subsurface) || ShadingModel.HasShadingModel(MSM_PreintegratedSkin) ||
 		ShadingModel.HasShadingModel(MSM_SubsurfaceProfile) || ShadingModel.HasShadingModel(MSM_TwoSidedFoliage) ||
 		ShadingModel.HasShadingModel(MSM_Toon) || ShadingModel.HasShadingModel(MSM_ToonFace) ||

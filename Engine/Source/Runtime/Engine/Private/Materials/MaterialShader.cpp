@@ -114,7 +114,7 @@ FString GetShadingModelString(EMaterialShadingModel ShadingModel)
 		case MSM_Eye:				ShadingModelName = TEXT("MSM_Eye"); break;
 		case MSM_SingleLayerWater:	ShadingModelName = TEXT("MSM_SingleLayerWater"); break;
 		case MSM_ThinTranslucent:	ShadingModelName = TEXT("MSM_ThinTranslucent"); break;
-		//将 Shading model 转为字符串描述
+		//将 Shading model 转为字符串描述 修改
 		case MSM_Toon:				ShadingModelName = TEXT("MSM_Toon");break;
 		case MSM_ToonFace:			ShadingModelName = TEXT("MSM_ToonFace");break;
 		default: ShadingModelName = TEXT("Unknown"); break;
@@ -249,7 +249,7 @@ void UpdateMaterialShaderCompilingStats(const FMaterial* Material)
 	{
 		INC_DWORD_STAT_BY(STAT_ShaderCompiling_NumUnlitMaterialShaders, 1);
 	}
-	//将 Toon 与 ToonFace 设置为 Lit
+	//将 Toon 与 ToonFace 设置为 Lit 修改
 	else if (ShadingModels.HasAnyShadingModel({ MSM_Toon,MSM_ToonFace
 		,MSM_DefaultLit, MSM_Subsurface, MSM_PreintegratedSkin, MSM_ClearCoat, MSM_Cloth, MSM_SubsurfaceProfile, MSM_TwoSidedFoliage, MSM_SingleLayerWater, MSM_ThinTranslucent }))
 	{

@@ -566,7 +566,7 @@ static void GetMaterialEnvironment(EShaderPlatform InPlatform,
 	{
 		int32 NumSetMaterials = 0;
 		//为 shading model 对应 shader
-		//设置 #MATERIAL_SHADINGMODEL_TOON #MATERIAL_SHADINGMODEL_TOONFACE 的宏
+		//设置 #MATERIAL_SHADINGMODEL_TOON #MATERIAL_SHADINGMODEL_TOONFACE 的宏 修改
 		if (ShadingModels.HasShadingModel(MSM_Toon))
 		{
 			OutEnvironment.SetDefine(TEXT("MATERIAL_SHADINGMODEL_TOON"),TEXT("1"));

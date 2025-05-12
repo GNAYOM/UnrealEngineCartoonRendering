@@ -267,7 +267,7 @@ namespace PixelInspector
 			return EMaterialShadingModel::MSM_ThinTranslucent;
 		case PIXEL_INSPECTOR_SHADINGMODELID_STRATA:
 			return EMaterialShadingModel::MSM_Strata;
-		//将 PIXEL_INSPECTOR_SHADINGMODELID 与 EMaterialShadingModel 对应上
+		//将 PIXEL_INSPECTOR_SHADINGMODELID 与 EMaterialShadingModel 对应上 修改
 		case PIXEL_INSPECTOR_SHADINGMODELID_TOON:
 			return EMaterialShadingModel::MSM_Toon;
 		case PIXEL_INSPECTOR_SHADINGMODELID_TOONFACE:

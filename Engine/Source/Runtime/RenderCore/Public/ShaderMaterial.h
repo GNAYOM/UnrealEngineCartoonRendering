@@ -104,7 +104,7 @@ struct FShaderMaterialPropertyDefines
 	uint8 SINGLE_LAYER_WATER_SEPARATED_MAIN_LIGHT : 1;
 	uint8 MATERIAL_SHADINGMODEL_THIN_TRANSLUCENT : 1;
 
-	//为允许 shading model 写入 Gbuffer做准备
+	//为允许 shading model 写入 Gbuffer做准备 修改
 	uint8 MATERIAL_SHADINGMODEL_TOON : 1;
 	uint8 MATERIAL_SHADINGMODEL_TOONFACE : 1;
 	uint8 TRANSLUCENCY_LIGHTING_VOLUMETRIC_NONDIRECTIONAL : 1;
