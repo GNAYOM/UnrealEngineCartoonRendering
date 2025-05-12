@@ -43,7 +43,7 @@ void FToonPassMeshProcessor::AddMeshBatch(const FMeshBatch& MeshBatch
 	if (Material != nullptr && Material->GetRenderingThreadShaderMap())
 	{
 		const FMaterialShadingModelField ShadingModels = Material->GetShadingModels();
-		if(/*ShadingModels.HasShadingModel( MSM_Toon) || ShadingModels.HasShadingModel(MSM_ToonFace)*/true)//为 shading models 开始渲染
+		if(ShadingModels.HasShadingModel( MSM_Toon) || ShadingModels.HasShadingModel(MSM_ToonFace))//为 shading models 开始渲染
 		{
 			const EBlendMode BlendMode = Material->GetBlendMode();
 
