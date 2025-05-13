@@ -317,8 +317,8 @@ bool HasCustomGBufferData(int ShadingModelID)
 
 		|| ShadingModelID == SHADINGMODELID_PREINTEGRATED_SKIN
 		//允许 Shading model 能够向 GBuffer 写入 CustomData step 7-1
-		|| ShadingModel == SHADINGMODELID_TOON
-		|| ShadingModel == SHADINGMODELID_TOONFACE
+		|| ShadingModelID == SHADINGMODELID_TOON
+		|| ShadingModelID == SHADINGMODELID_TOONFACE
 		|| ShadingModelID == SHADINGMODELID_CLEAR_COAT
 		|| ShadingModelID == SHADINGMODELID_SUBSURFACE_PROFILE
 		|| ShadingModelID == SHADINGMODELID_TWOSIDED_FOLIAGE
