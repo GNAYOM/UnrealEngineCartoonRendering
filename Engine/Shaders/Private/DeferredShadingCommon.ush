@@ -314,10 +314,11 @@ bool UseSubsurfaceProfile(int ShadingModel)
 bool HasCustomGBufferData(int ShadingModelID)
 {
 	return ShadingModelID == SHADINGMODELID_SUBSURFACE
-		//允许 Shading model 能够向 GBuffer 写入 CustomData
+
+		|| ShadingModelID == SHADINGMODELID_PREINTEGRATED_SKIN
+		//允许 Shading model 能够向 GBuffer 写入 CustomData step 7-1
 		|| ShadingModel == SHADINGMODELID_TOON
 		|| ShadingModel == SHADINGMODELID_TOONFACE
-		|| ShadingModelID == SHADINGMODELID_PREINTEGRATED_SKIN
 		|| ShadingModelID == SHADINGMODELID_CLEAR_COAT
 		|| ShadingModelID == SHADINGMODELID_SUBSURFACE_PROFILE
 		|| ShadingModelID == SHADINGMODELID_TWOSIDED_FOLIAGE

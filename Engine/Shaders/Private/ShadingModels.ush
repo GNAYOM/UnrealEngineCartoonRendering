@@ -13,6 +13,7 @@
 #include "ShadingEnergyConservation.ush"
 #include "ParticipatingMediaCommon.ush"
 #include "ColorSpace.ush"
+//添加头文件 step 10-1
 #include "Toon/ToonShadingCommon.usf"
 
 #if SHADING_PATH_MOBILE
@@ -959,8 +960,8 @@ FDirectLighting PreintegratedSkinBxDF( FGBufferData GBuffer, half3 N, half3 V, h
 	return Lighting;
 }
 
-// ShadingModel shader step 10-2
-// ToonShading的BRDF，直接copy别人的文章
+
+// ToonShading的BRDF，直接copy别人的文章 step 10-2
 FDirectLighting ToonBxDF(FGBufferData GBuffer, half3 N, half3 V, half3 L, float Falloff, float NoL, FAreaLight AreaLight, FShadowTerms Shadow)
 {
 #if GBUFFER_HAS_TANGENT
@@ -1028,6 +1029,11 @@ FDirectLighting IntegrateBxDF( FGBufferData GBuffer, half3 N, half3 V, half3 L, 
 			return ClothBxDF( GBuffer, N, V, L, Falloff, NoL, AreaLight, Shadow );
 		case SHADINGMODELID_EYE:
 			return EyeBxDF( GBuffer, N, V, L, Falloff, NoL, AreaLight, Shadow );
+		//使用自定义 BRDF 计算卡通光照 step 10-3
+		case SHADINGMODELID_TOON:
+			return ToonBxDF( GBuffer, N, V, L, Falloff, NoL, AreaLight, Shadow );
+		case SHADINGMODELID_TOONFACE:
+			return ToonBxDF( GBuffer, N, V, L, Falloff, NoL, AreaLight, Shadow );
 		default:
 			return (FDirectLighting)0;
 	}

@@ -1,0 +1,9 @@
+#pragma once
+#include "../ShadingModels.ush"
+
+//卡通相关通用代码 step 9
+half ToonStep(float halfLambert, float smoothness = 0.001f , float threshold = 0.5f)
+{
+	smoothness = max(smoothness , 0.001f);
+	return smoothstep(threshold - smoothness , threshold + smoothness , halfLambert);
+}
