@@ -43,7 +43,7 @@ void SetGBufferForShadingModel(
 	else if (ShadingModel == MATERIAL_SHADINGMODEL_TOON || MATERIAL_SHADINGMODEL_TOONFACE)
 	{
 		//此处 GBuffer.CustomData 是 GBuffer0，不是材质属性上的 CustomData
-		GBuffer.CustomData.rgb = EncodedSubsurfaceColor(SubsurfaceColor);
+		GBuffer.CustomData.rgb = EncodeSubsurfaceColor(SubsurfaceColor);
 		GBuffer.CustomData.a = saturate(GetMaterialCustomData0(MaterialParameters));
 	}
 #endif
